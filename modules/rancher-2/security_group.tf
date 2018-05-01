@@ -15,14 +15,14 @@ resource "aws_security_group" "rancher_server" {
     from_port = 80
     to_port   = 80
     protocol  = "tcp"
-    cidr_blocks = ["${var.myip}/32"]
+    cidr_blocks = ["${var.myip}/32", "${var.private_subnet_cidr}"]
   }
 
   ingress {
     from_port = 443
     to_port   = 443
     protocol  = "tcp"
-    cidr_blocks = ["${var.myip}/32"]
+    cidr_blocks = ["${var.myip}/32", "${var.private_subnet_cidr}"]
   }
 
   egress {
