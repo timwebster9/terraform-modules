@@ -1,5 +1,7 @@
 variable "assign_public_ip" {}
 variable "instance_type" {}
+variable "ami_name" {}
+variable "ami_owner" {}
 variable "key_name" {}
 variable "vpc_cidr" {}
 variable "public_subnet_cidr" {}
