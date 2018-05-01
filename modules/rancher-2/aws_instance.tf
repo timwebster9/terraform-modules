@@ -21,6 +21,7 @@ resource "aws_instance" "rancher_server" {
   vpc_security_group_ids      = ["${aws_security_group.rancher_server.id}"]
   associate_public_ip_address = "${var.assign_public_ip}"
   key_name                    = "${var.key_name}"
+  user_data                   = "${data.template_file.rancher_server_user_data.rendered}"
 
   tags {
     Name = "Rancher Server"
